@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  height: 0;
+}
+
+html {
+  --spinner: #FFA500;
+  --center-icon: #00C78C;
+  --first-arc: #436EEE;
+  --second-arc: #5CACEE;
+  --center: translate(-50%, -50%);
+  background: #10204E;
+}
+
+.center {
+   position: absolute;
+   width: 30px;
+   height: 30px;
+   background: var(--center-icon);
+   border-radius: 50%;
+   top: 50%;
+   left: 50%;
+   transform: var(--center); 
+}
+
+.outer-spin, .inner-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.inner-arc {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 4px solid;
+}
+
+.inner-arc_start-a {
+  border-color: transparent transparent transparent var(--first-arc);
+  transform: var(--center) rotate(65deg); 
+}
+.inner-arc_end-a {
+  border-color: var(--first-arc) transparent transparent transparent;
+  transform: var(--center) rotate(45deg);
+}
+
+.inner-moon-a {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 12px;
+   height: 12px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(33px, 0); 
+}
+
+.inner-moon-b {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 12px;
+   height: 12px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(-33px, 0); 
+}
+
+.inner-arc_start-b {
+  border-color: transparent transparent transparent var(--second-arc); 
+  transform: var(--center) rotate(65deg) scale(-1, -1);
+}
+.inner-arc_end-b {
+  border-color: var(--second-arc) transparent transparent transparent;
+  transform: var(--center) rotate(45deg) scale(-1, -1);
+}
+
+.outer-arc {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid;
+}
+
+.outer-arc_start-a {
+  border-color: transparent transparent transparent var(--second-arc);
+  transform: var(--center) rotate(65deg); 
+}
+.outer-arc_end-a {
+  border-color: var(--second-arc) transparent transparent transparent;
+  transform: var(--center) rotate(45deg);
+}
+
+.outer-moon-a {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 12px;
+   height: 12px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(53px, 0); 
+}
+
+.outer-moon-b {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 15px;
+   height: 15px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(-53px, 0); 
+}
+
+.outer-arc_start-b {
+  border-color: transparent transparent transparent var(--first-arc); 
+  transform: var(--center) rotate(65deg) scale(-1, -1);
+}
+.outer-arc_end-b {
+  border-color: var(--first-arc) transparent transparent transparent;
+  transform: var(--center) rotate(45deg) scale(-1, -1);
+}
+
+.outer-spin {
+  animation: spin 4s linear infinite;
+}
+.inner-spin {
+  animation: spin 3s linear infinite;
+}
+
+
+@keyframes spin { 100% {transform: rotate(360deg); } }
